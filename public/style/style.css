@@ -1,0 +1,137 @@
+tml, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.content {
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+}
+
+header {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgba(0,0,0,0.9);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid #a5a501;
+    height: 60px;
+}
+
+header h1 {
+    font-family: 'Fugaz One', cursive;
+    color: white;
+    font-size: 30px;
+    position: relative;
+    top: 14px;
+}
+
+header .button {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    background-color: #5bb75b;
+    background-image: -moz-linear-gradient(top,#62c462,#51a351);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#62c462),to(#51a351));
+    background-image: -webkit-linear-gradient(top,#62c462,#51a351);
+    background-image: -o-linear-gradient(top,#62c462,#51a351);
+    background-image: linear-gradient(to bottom,#62c462,#51a351);
+    background-repeat: repeat-x;
+    border-color: #51a351 #51a351 #387038;
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462',endColorstr='#ff51a351',GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    position: absolute;
+    right: 0;
+    top: 10px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+header .button:hover {
+    text-decoration: none;
+    background-position: 0 -15px;
+    -webkit-transition: background-position .1s linear;
+    -moz-transition: background-position .1s linear;
+    -o-transition: background-position .1s linear;
+    transition: background-position .1s linear;
+    color: #fff;
+    background-color: #51a351;
+}
+
+#body {
+    width: 980px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#body h2 {
+    font-family: 'Fugaz One', cursive;
+    color: black;
+    font-size: 26px;
+    position: relative;
+    margin: 14px 0 14px 0;
+}
+
+#body textarea {
+    width: 980px;
+    height: 450px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 10px;
+}
+
+footer ul {
+    display: inline;
+}
+
+footer li {
+    display: inline;
+    border-left: 1px solid black;
+    padding: 0 10px;
+}
+
+footer li:first-child {
+    border-left: 0;
+}
+
+footer li a {
+    color: black;
+}
