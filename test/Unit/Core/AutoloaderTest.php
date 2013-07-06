@@ -47,7 +47,7 @@ class AutoloaderTest extends \PHPUnit_Framework_TestCase
      */
     public function testLoadSuccess()
     {
-        $autoloader = new Autoloader('FakeProject', __DIR__ . '/../Mocks/Core');
+        $autoloader = new Autoloader('FakeProject', dirname(__DIR__) . '/../Mocks/Core');
 
         $this->assertTrue($autoloader->register());
 
@@ -63,7 +63,7 @@ class AutoloaderTest extends \PHPUnit_Framework_TestCase
      */
     public function testLoadSuccessExtraSlashedNamespace()
     {
-        $autoloader = new Autoloader('\\\\FakeProject', __DIR__ . '/../Mocks/Core');
+        $autoloader = new Autoloader('\\\\FakeProject', dirname(__DIR__) . '/../Mocks/Core');
 
         $this->assertTrue($autoloader->register());
 
@@ -79,7 +79,7 @@ class AutoloaderTest extends \PHPUnit_Framework_TestCase
      */
     public function testLoadSuccessExtraForwardSlashedPath()
     {
-        $autoloader = new Autoloader('FakeProject', __DIR__ . '/../Mocks/Core//');
+        $autoloader = new Autoloader('FakeProject', dirname(__DIR__) . '/../Mocks/Core//');
 
         $this->assertTrue($autoloader->register());
 
@@ -95,7 +95,7 @@ class AutoloaderTest extends \PHPUnit_Framework_TestCase
      */
     public function testLoadSuccessExtraBackwardSlashedPath()
     {
-        $autoloader = new Autoloader('FakeProject', __DIR__ . '/../Mocks/Core\\');
+        $autoloader = new Autoloader('FakeProject', dirname(__DIR__) . '/../Mocks/Core\\');
 
         $this->assertTrue($autoloader->register());
 
@@ -111,7 +111,7 @@ class AutoloaderTest extends \PHPUnit_Framework_TestCase
      */
     public function testLoadSuccessExtraMixedSlashedPath()
     {
-        $autoloader = new Autoloader('FakeProject', __DIR__ . '/../Mocks/Core\\\\/\\//');
+        $autoloader = new Autoloader('FakeProject', dirname(__DIR__) . '/../Mocks/Core\\\\/\\//');
 
         $this->assertTrue($autoloader->register());
 
@@ -127,7 +127,7 @@ class AutoloaderTest extends \PHPUnit_Framework_TestCase
      */
     public function testLoadUnknownClass()
     {
-        $autoloader = new Autoloader('FakeProject', __DIR__ . '/../Mocks/Core\\\\/\\//');
+        $autoloader = new Autoloader('FakeProject', dirname(__DIR__) . '/../Mocks/Core\\\\/\\//');
 
         $this->assertTrue($autoloader->register());
 
