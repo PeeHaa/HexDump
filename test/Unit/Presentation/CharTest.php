@@ -7,7 +7,7 @@ use HexDump\Presentation\Char;
 class CharTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers HexDump\Http\Request::format
+     * @covers HexDump\Presentation\Char::format
      */
     public function testFormatAscii()
     {
@@ -17,7 +17,7 @@ class CharTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers HexDump\Http\Request::format
+     * @covers HexDump\Presentation\Char::format
      */
     public function testFormatSpace()
     {
@@ -27,7 +27,7 @@ class CharTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers HexDump\Http\Request::format
+     * @covers HexDump\Presentation\Char::format
      */
     public function testFormatLinebreak()
     {
@@ -37,7 +37,7 @@ class CharTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers HexDump\Http\Request::format
+     * @covers HexDump\Presentation\Char::format
      */
     public function testFormatMultibyte()
     {
