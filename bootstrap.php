@@ -40,14 +40,21 @@ $autoloader = new Autoloader(__NAMESPACE__, dirname(__DIR__));
 $autoloader->register();
 
 /**
- * Setup the request object
- */
-$request = new Request($_SERVER, $_GET, $_POST, $_COOKIE);
-
-/**
  * Setup storage
  */
 $storage = new Storage(__DIR__ . '/data');
+
+/**
+ * Prevent rendering of templates when on CLI
+ */
+if(php_sapi_name() === 'cli') {
+    return;
+}
+
+/**
+ * Setup the request object
+ */
+$request = new Request($_SERVER, $_GET, $_POST, $_COOKIE);
 
 /**
  * Get the template
