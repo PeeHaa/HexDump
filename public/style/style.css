@@ -113,6 +113,12 @@ header .button:hover {
     height: 450px;
 }
 
+#body pre {
+    font-family: "Courier New", Courier, monospace;
+    margin: 10px 0;
+    border: 1px solid black;
+}
+
 footer {
     text-align: center;
     margin-top: 10px;
