@@ -13,7 +13,8 @@
 namespace HexDump;
 
 use HexDump\Core\Autoloader,
-    HexDump\Http\Request;
+    HexDump\Http\Request,
+    HexDump\FileSystem\Storage;
 
 /**
  * Setup error reporting
@@ -44,6 +45,40 @@ $autoloader->register();
 $request = new Request($_SERVER, $_GET, $_POST, $_COOKIE);
 
 /**
+ * Setup storage
+ */
+$storage = new Storage(__DIR__ . '/data');
+
+/**
+ * Get the template
+ */
+if ($request->getPath() == '/convert') {
+    if ($request->getPostVariable('string') !== '') {
+        $hash = $storage->save($request->getPostVariable('string'));
+    } else {
+        $hash = $storage->save(file_get_contents($_FILES['file']['tmp_name']));
+    }
+
+    $resultUrl = $request->isSsl() ? 'https://' : 'http://';
+    $resultUrl.= $request->getHost();
+    $resultUrl.= '/' . $hash;
+
+    header('Location: ' . $resultUrl);
+    exit;
+} elseif (strlen($request->getPath()) === 41) {
+    $hash = substr($request->getPath(), 1);
+
+    $template = __DIR__ . '/templates/result.phtml';
+} else {
+    $template = __DIR__ . '/templates/main.phtml';
+}
+
+/**
  * Render the page
  */
-require __DIR__ . '/templates/main.phtml';
+ob_start();
+require $template;
+$content = ob_get_contents();
+ob_end_clean();
+
+require __DIR__ . '/templates/page.phtml';

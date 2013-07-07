@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HexDump - Online hex viewer</title>
+        <meta name="description" content="Easily see the hex codes of either direct input or based on an uploaded file.">
+        <meta name="robots" content="index, follow">
+        <script>'article aside footer header nav section time'.replace(/\w+/g,function(n){document.createElement(n)})</script>
+        <link href='http://fonts.googleapis.com/css?family=Fugaz+One' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="/style/style.css">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <?php echo $content; ?>
+        <footer>
+            <div class="content">
+                <ul>
+                    <li>HexDump - Online hex viewer © <?php echo (new DateTime())->format('Y'); ?></li>
+                    <li><a href="https://github.com/PeeHaa/HexDump" target="_blank">Projectpage on GitHub</a></li>
+                    <li>License: <a href="http://spdx.org/licenses/MIT" target="_blank">MIT</a></li>
+                    <li>Developed and maintained by: <a href="https://github.com/PeeHaa" target="_blank">Pieter Hordijk</a></li>
+                </ul>
+            </div>
+        </footer>
+        <script src="/js/main.js"></script>
+    </body>
+</html>
