@@ -12,6 +12,11 @@ Requirements
 
 PHP 5.4+
 
+Documentation
+-
+
+[Wiki][wiki]
+
 License
 -
 
@@ -19,3 +24,4 @@ License
 
 [MIT]: http://spdx.org/licenses/MIT
 [demo]: https://hexdump.pieterhordijk.com
+[wiki]: https://github.com/PeeHaa/HexDump/wiki
