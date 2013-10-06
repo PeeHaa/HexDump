@@ -1,14 +1,26 @@
 <?php
 $charParser = new \HexDump\Presentation\Char();
-$printer    = new \HexDump\Presentation\Printer($charParser, $storage->get($hash));
+
+if (isset($search)) {
+    $searchValue = implode(' ', str_split($search, 2));
+    $printer     = new \HexDump\Presentation\PatternFinder(new \HexDump\Presentation\Printer($charParser, $storage->get($hash)));
+    $printer->find(str_split($search, 2));
+} else {
+    $searchValue = '';
+    $printer     = new \HexDump\Presentation\Printer($charParser, $storage->get($hash));
+}
 ?>
 
 <header>
     <div class="content">
         <h1>HexDump - Online hex viewer</h1>
+        <form action="/<?php echo $hash; ?>/search" method="post">
+            <input type="text" name="search" value="<?php echo $searchValue; ?>">
+            <input type="submit" name="submit" value="Search">
+        </form>
     </div>
 </header>
 <div id="body">
     <h2>Output</h2>
-    <pre><?php foreach ($printer as $line) { ?><?php echo implode(' ', $line['hex']); ?> |<?php echo htmlspecialchars(implode('', $line['ori']), ENT_QUOTES, 'UTF-8') . "|\n"; ?><?php } ?></pre>
+    <pre><?php foreach ($printer as $lineNumber => $line) { ?><span id="L<?php echo str_pad(dechex($lineNumber * 23), 8, '0', STR_PAD_LEFT); ?>" class="active"><?php echo implode(' ', $line['hex']); ?></span> |<?php echo htmlspecialchars(implode('', $line['ori']), ENT_QUOTES, 'UTF-8') . "|\n"; ?><?php } ?></pre>
 </div>

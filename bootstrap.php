@@ -76,6 +76,18 @@ if ($request->getPath() == '/convert') {
     $hash = substr($request->getPath(), 1);
 
     $template = __DIR__ . '/templates/result.phtml';
+} else if (preg_match('#^/([a-f0-9]{40})/search#', $request->getPath(), $matches) === 1 && $request->getMethod() === 'POST') {
+    $resultUrl = $request->isSsl() ? 'https://' : 'http://';
+    $resultUrl.= $request->getHost();
+    $resultUrl.= '/' . $matches[1] . '/search/' . str_replace(' ', '', $request->getPostVariable('search'));
+
+    header('Location: ' . $resultUrl);
+    exit;
+} else if (preg_match('#^/([a-f0-9]{40})/search/([^/]+)#', $request->getPath(), $matches) === 1 && $request->getMethod() === 'GET') {
+    $hash   = $matches[1];
+    $search = $matches[2];
+
+    $template = __DIR__ . '/templates/result.phtml';
 } else {
     $template = __DIR__ . '/templates/main.phtml';
 }

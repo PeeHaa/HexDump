@@ -94,6 +94,43 @@ header .button:hover {
     background-color: #51a351;
 }
 
+header form {
+    position: absolute;
+    top: 17px;
+    right: 0;
+}
+
+header form input[type="text"] {
+    width: 300px;
+}
+
+header form input[type="submit"] {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    background-color: #5bb75b;
+    background-image: -moz-linear-gradient(top,#62c462,#51a351);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#62c462),to(#51a351));
+    background-image: -webkit-linear-gradient(top,#62c462,#51a351);
+    background-image: -o-linear-gradient(top,#62c462,#51a351);
+    background-image: linear-gradient(to bottom,#62c462,#51a351);
+    background-repeat: repeat-x;
+    border: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462',endColorstr='#ff51a351',GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    padding: 3px 10px;
+}
+
+header form input[type="submit"]:hover {
+    text-decoration: none;
+    background-position: 0 -15px;
+    -webkit-transition: background-position .1s linear;
+    -moz-transition: background-position .1s linear;
+    -o-transition: background-position .1s linear;
+    transition: background-position .1s linear;
+    color: #fff;
+    background-color: #51a351;
+}
+
 #body {
     width: 980px;
     margin: 0 auto;
@@ -117,6 +154,14 @@ header .button:hover {
     font-family: "Courier New", Courier, monospace;
     margin: 10px 0;
     border: 1px solid black;
+}
+
+#body pre span.active {
+    background: #eeeeee;
+}
+
+span.search {
+    background-color: #5bb75b;
 }
 
 footer {
