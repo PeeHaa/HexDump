@@ -24,6 +24,11 @@ ini_set('display_errors', 1);
 ini_set('log_errors', 0);
 
 /**
+ * Setup memory limit because the pattern finder code is sloppy and I am lazy
+ */
+ini_set('memory_limit', '2048M');
+
+/**
  * Setup timezone
  */
 ini_set('date.timezone', 'Europe/Amsterdam');
