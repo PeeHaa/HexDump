@@ -41,6 +41,7 @@ table {
     width: 980px;
     margin: 0 auto;
     position: relative;
+    padding-top: 17px;
 }
 
 header {
@@ -58,8 +59,7 @@ header h1 {
     font-family: 'Fugaz One', cursive;
     color: white;
     font-size: 30px;
-    position: relative;
-    top: 14px;
+    float: left;
 }
 
 header .button {
@@ -95,9 +95,8 @@ header .button:hover {
 }
 
 header form {
-    position: absolute;
-    top: 17px;
-    right: 0;
+    vertical-align: baseline;
+    float: right;
 }
 
 header form input[type="text"] {
