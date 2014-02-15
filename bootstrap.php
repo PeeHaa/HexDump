@@ -81,6 +81,13 @@ if ($request->getPath() == '/convert') {
     $hash = substr($request->getPath(), 1);
 
     $template = __DIR__ . '/templates/result.phtml';
+} else if (preg_match('#^/([a-f0-9]{40})/raw#', $request->getPath(), $matches) === 1 && $request->getMethod() === 'GET') {
+    $data = $storage->get($matches[1]);
+
+    header('Content-Type: application/octet-stream');
+    header('Content-Length: ' . strlen($data));
+
+    exit($data);
 } else if (preg_match('#^/([a-f0-9]{40})/search#', $request->getPath(), $matches) === 1 && $request->getMethod() === 'POST') {
     $resultUrl = $request->isSsl() ? 'https://' : 'http://';
     $resultUrl.= $request->getHost();
