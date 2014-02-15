@@ -86,6 +86,7 @@ if ($request->getPath() == '/convert') {
 
     header('Content-Type: application/octet-stream');
     header('Content-Length: ' . strlen($data));
+    header('Content-Disposition: attachment; filename="' . $matches[1] . '"');
 
     exit($data);
 } else if (preg_match('#^/([a-f0-9]{40})/search#', $request->getPath(), $matches) === 1 && $request->getMethod() === 'POST') {
