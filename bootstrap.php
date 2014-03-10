@@ -89,6 +89,12 @@ if ($request->getPath() == '/convert') {
     header('Content-Disposition: attachment; filename="' . $matches[1] . '"');
 
     exit($data);
+} else if (preg_match('#^/([a-f0-9]{40})/bom#', $request->getPath(), $matches) === 1 && $request->getMethod() === 'GET') {
+    $hash   = $matches[1];
+
+    $checkForBom = true;
+
+    $template = __DIR__ . '/templates/result.phtml';
 } else if (preg_match('#^/([a-f0-9]{40})/search#', $request->getPath(), $matches) === 1 && $request->getMethod() === 'POST') {
     $resultUrl = $request->isSsl() ? 'https://' : 'http://';
     $resultUrl.= $request->getHost();

@@ -108,7 +108,7 @@ header form input[type="text"] {
     width: 300px;
 }
 
-header form input[type="submit"] {
+header form input[type="submit"], header .button-link {
     color: #fff;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
     background-color: #5bb75b;
@@ -124,7 +124,7 @@ header form input[type="submit"] {
     padding: 3px 10px;
 }
 
-header form input[type="submit"]:hover {
+header form input[type="submit"]:hover, header .button-link:hover {
     text-decoration: none;
     background-position: 0 -15px;
     -webkit-transition: background-position .1s linear;
@@ -133,6 +133,18 @@ header form input[type="submit"]:hover {
     transition: background-position .1s linear;
     color: #fff;
     background-color: #51a351;
+}
+
+header .button-link {
+    top: 2px;
+    position: relative;
+    text-decoration: none;
+    font-size: 13px;
+    float: right;
+    font-family: arial;
+    padding: 5px 10px 4px;
+    margin: 0 2px;
+    cursor: default;
 }
 
 #body {
@@ -146,7 +158,8 @@ header form input[type="submit"]:hover {
     color: black;
     font-size: 26px;
     position: relative;
-    margin: 14px 0 14px 0;
+    margin: 0 0 14px 0;
+    padding-top: 14px;
 }
 
 #body textarea {
@@ -166,6 +179,19 @@ header form input[type="submit"]:hover {
 
 span.search {
     background-color: #5bb75b;
+}
+
+.flash-notification {
+    background: #f93477;
+    height: 40px;
+}
+
+.flash-notification p {
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 12px;
+    color: white;
 }
 
 footer {
